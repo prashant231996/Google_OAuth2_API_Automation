@@ -78,6 +78,20 @@ public class GmailApi {
 				.extract().response();
 	}
 	
+	public static Response updateMessage(String userId,String id,String updatedMessage)
+	{
+		return given()
+				.spec(SpecBuilder.getRequestSpec())
+				.pathParam("userId", userId)
+				.pathParam("id", id)
+				.auth().oauth2(TokenManager.getToken())
+				.body(updatedMessage)
+				.when()
+				.post(Routes.updateMessage)
+				.then().spec(SpecBuilder.getResponseSpec())
+				.extract().response();
+	}
+	
 	
 	
 	

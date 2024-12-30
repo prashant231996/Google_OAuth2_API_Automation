@@ -52,7 +52,18 @@ public class GmailAPITests {
 		Assert.assertTrue(res.asString().contains(PropertyUtils.getPropertyValue("userId")));
 	}
 	
-	@Test(priority=4,description="User should able to get list of all messages")
+	@Test(priority=4,description="User should be able to update Message")
+	public void shouldBeAbleToUpdateMessage() throws IOException
+	{
+		String payLoad="{\"removeLabelIds\": [\r\n" + 
+				"    \"UNREAD\"\r\n" + 
+				"  ]\r\n" + 
+				"}";
+		Response res=GmailApi.updateMessage(PropertyUtils.getPropertyValue("userId"), idValue,payLoad);
+		Assert.assertEquals(res.getStatusCode(), 200);
+	}
+	
+	@Test(priority=5,description="User should able to get list of all messages")
 	public void getListOfAllMessage() throws IOException
 	{
 		Response res=GmailApi.getListMessage(PropertyUtils.getPropertyValue("userId"));
@@ -60,7 +71,7 @@ public class GmailAPITests {
 	}
 	
 	
-	@Test(priority=5, description="User Should able to delete message")
+	@Test(priority=6, description="User Should able to delete message")
 	public void shouldBeABleToDeleteMessage() throws IOException
 	{
 		Response res=GmailApi.deleteMessage(PropertyUtils.getPropertyValue("userId"), idValue);

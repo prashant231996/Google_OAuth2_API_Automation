@@ -10,5 +10,6 @@ public class Routes {
 	public static final String getMessage="/users/{userId}/messages/{id}";
 	public static final String deleteMessage="/users/{userId}/messages/{id}";
 	public static final String getListOfMessages="/users/{userId}/messages";
+	public static final String updateMessage="/users/{userId}/messages/{id}/modify";
 	
 }
