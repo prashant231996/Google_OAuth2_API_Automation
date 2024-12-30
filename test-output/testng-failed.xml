@@ -5,7 +5,7 @@
     <classes>
       <class name="com.google.oauth2.tests.GmailAPITests">
         <methods>
-          <include name="shouldBeAbleToGetProfileDetails"/>
+          <include name="shouldBeABleToDeleteMessageAgain"/>
         </methods>
       </class> <!-- com.google.oauth2.tests.GmailAPITests -->
     </classes>

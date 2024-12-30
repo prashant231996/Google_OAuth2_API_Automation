@@ -7,5 +7,8 @@ public class Routes {
 	public static final String getUserProfile="/users/{userId}/profile";
 	public static final String sendEmail="/users/{userId}/messages/send";
 	public static final String renewToken="/token";
+	public static final String getMessage="/users/{userId}/messages/{id}";
+	public static final String deleteMessage="/users/{userId}/messages/{id}";
+	public static final String getListOfMessages="/users/{userId}/messages";
 	
 }
